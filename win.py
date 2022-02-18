@@ -76,6 +76,6 @@ btn = Button(window,
 btn.pack()
 btn.place(y=240, x=200)
 
-#window.resizable(False, False)  #заморозка разрешения окна
+window.resizable(False, False)  #заморозка разрешения окна
 window["bg"]="gray22"
 window.mainloop()
