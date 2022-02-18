@@ -1,7 +1,8 @@
 from tkinter import *
 import tkinter as tk
 import tkinter.font as tkFont
-
+import sys
+import time
 
 clicks = 0
 
@@ -24,11 +25,24 @@ def click_b():
         if clicks == 10:
                 window.title("A")
 
+
+def timing():
+    current_time = time.strftime("%H : %M : %S")
+    clock.config(text=current_time)
+    clock.after(200,timing)
+
 #окно
 window = tk.Tk()
 window.title("window")
-window.geometry("400x400")
+window.geometry("380x380")
 #logo = tk.PhotoImage(file = "m.png")
+
+clock=Label(window,font=("times",60,"bold"),background="#455",foreground="#590")
+clock.pack()
+timing()
+
+digital=Label(window,text="DigitaL",font="times 24 bold",background="#455",foreground="#590")
+digital.pack()
 
 #подключаем текстовый документ
 data_file = open("wintxt.txt")
@@ -39,29 +53,29 @@ w = tk.Label(window,
 	background="#455",      #цвет фона текста
 	foreground="#590")      #цвет текста
 w.pack()
-w.place(x=280, y=305)           #положение текста
+w.place(y=295, x=260)           #положение текста
 
 #w1 = tk.Label(image=logo)       картинка на фон
 #w1.pack()
 
 #кнопки
 btn = Button(window,
-	text="ok",
+	text="OK",
 	background="#390",  	#фон
 	command=click_button,	#активация кнопки
-	height=5,		#высота
-	width=10)		#ширина
+	height=1,		#высота
+	width=17)		#ширина
 btn.pack()
-btn.place(x=195,y=150)		#положение кнопки в окне
+btn.place(y=240, x=32)	#положение кнопки в окне
 btn = Button(window,
-	text="no",
+	text="NO",
 	background="#800",
 	command=click_b,
-	height=5,
-        width=10)
+	height=1,
+        width=17)
 btn.pack()
-btn.place(x=103,y=150)
+btn.place(y=240, x=200)
 
-window.resizable(False, False)  #заморозка разрешения окна
+#window.resizable(False, False)  #заморозка разрешения окна
 window["bg"]="gray22"
 window.mainloop()
