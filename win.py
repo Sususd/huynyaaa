@@ -41,10 +41,10 @@ def click_button():
         global clicks
         clicks += 1
         window.title("Clicks {}".format(clicks))
-        if clicks == 10:
-                window.title("A")
-        if clicks == -10:
-                window.title("F")
+        if clicks == 1000:
+                window.title("openrc")
+        if clicks == -1000:
+                window.title("systemd")
 
         global n
         n += 1
@@ -54,10 +54,10 @@ def click_b():
         global clicks
         clicks -= 1
         window.title("Clicks {}".format(clicks))
-        if clicks == -10:
-                window.title("F")
-        if clicks == 10:
-                window.title("A")
+        if clicks == -1000:
+                window.title("systemd")
+        if clicks == 1000:
+                window.title("openrc")
 
         global n
         n -= 1
@@ -72,15 +72,14 @@ def timing():
 window = tk.Tk()
 window.title("window")
 window.geometry("380x380")
-#logo = tk.PhotoImage(file = "m.png")
 
 label = Label(window,
         text= str(n),
-        font = ('Helvetica'),
+        font = ("Helvetica", 40),
         background="#455",
         foreground="#900")
 label.pack()
-label.place(y=270, x=182)
+label.place(y=320, x=0)
 
 window.bind('<Button-1>', b1)
 window.bind('<Button-3>', b3)
@@ -109,10 +108,7 @@ w = tk.Label(window,
 	background="#455",      #цвет фона текста
 	foreground="#590")      #цвет текста
 w.pack()
-w.place(y=295, x=260)           #положение текста
-
-#w1 = tk.Label(image=logo)       картинка на фон
-#w1.pack()
+w.place(y=295, x=263)           #положение текста
 
 #кнопки
 btn = Button(window,
