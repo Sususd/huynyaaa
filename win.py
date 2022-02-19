@@ -87,9 +87,10 @@ window.bind('<Motion>', move)
 
 clock=tk.Label(window,             #конфиг часов
         font=("times",60,"bold"),
-        background="#455",
-        foreground="#590")
+        background="#100",
+        foreground="#499")
 clock.pack()
+clock.place(x=0, y=50)
 timing()
 
 digital=Label(window,              #подпись под часами
@@ -98,6 +99,7 @@ digital=Label(window,              #подпись под часами
         background="#100",
         foreground="#590")
 digital.pack()
+digital.place(x=135, y=104)
 
 #подключаем текстовый документ
 data_file = open("wintxt.txt")
