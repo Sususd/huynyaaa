@@ -33,7 +33,7 @@ def destroy_widget(widget):
 def move(event):
         x = event.x
         y = event.y
-        s = "Движение мышью {}x{}".format(x, y)
+        s = "|o_0| {}x{}".format(x, y)
         window.title(s)
 
 #скрипты для нажатия кнопок
