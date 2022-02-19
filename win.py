@@ -15,7 +15,7 @@ def b1(event):                       #ненужно, но прикольно)))
                 foreground="#499",
                 background="#455")
         e.pack()
-        e.place(y=100, x=0)
+        e.place(y=150, x=0)
         window.after(1000, destroy_widget, e)
 
 def b3(event):
@@ -24,7 +24,7 @@ def b3(event):
                 foreground="#499",
                 background="#455")
         c.pack()
-        c.place(y=100, x=315)
+        c.place(y=150, x=447)
         window.after(1000, destroy_widget, c)
 
 def destroy_widget(widget):            #что бы стереть всплывающий текст
@@ -71,12 +71,12 @@ def timing():                     #часы
 #окно
 window = tk.Tk()
 window.title("window")
-window.geometry("380x380")
+window.geometry("515x380")
 
 label = Label(window,              #конфиг тыркалки
         text= str(n),
         font = ("Helvetica", 60),
-        background="#100",
+        background="#203",
         foreground="#900")
 label.pack()
 label.place(y=310, x=0)
@@ -86,20 +86,20 @@ window.bind('<Button-3>', b3)
 window.bind('<Motion>', move)
 
 clock=tk.Label(window,             #конфиг часов
-        font=("times",60,"bold"),
-        background="#100",
+        font=("times",80,"bold"),
+        background="#203",
         foreground="#499")
 clock.pack()
-clock.place(x=0, y=50)
+clock.place(x=5, y=50)
 timing()
 
 digital=Label(window,              #подпись под часами
         text="DigitaL",
         font="times 24 bold",
-        background="#100",
+        background="#203",
         foreground="#590")
 digital.pack()
-digital.place(x=135, y=104)
+digital.place(x=205, y=127)
 
 #подключаем текстовый документ
 data_file = open("wintxt.txt")
@@ -107,30 +107,30 @@ data = data_file.read()         #чтение содержимого файла
 data_file.close()
 w = tk.Label(window,
 	text=data,
-	background="#100",      #цвет фона текста
+	background="#203",      #цвет фона текста
 	foreground="#499")      #цвет текста
 w.pack()
-w.place(y=310, x=263)           #положение текста
+w.place(y=310, x=400)           #положение текста
 
 #кнопки
 btn = Button(window,
 	text="OK",
 	background="#390",  	#фон
 	command=click_button,	#активация кнопки
-	height=1,		#высота
+	height=3,		#высота
 	width=17)
 btn.pack()
-btn.place(y=240, x=32)	        #положение кнопки в окне
+btn.place(y=240, x=110)	        #положение кнопки в окне
 btn = Button(window,
 	text="NO",
 	background="#900",
 	command=click_b,
-	height=1,
+	height=3,
         width=17)
 btn.pack()
-btn.place(y=240, x=200)
+btn.place(y=240, x=260)
 
 window.resizable(False, False)  #заморозка разрешения окна
-window["bg"]="black"
+window["bg"]="#203"
 window.mainloop()
 
