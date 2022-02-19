@@ -52,7 +52,7 @@ def click_button():
 
 def click_b():
         global clicks
-        clicks -= 1
+        clicks += 1
         window.title("Clicks {}".format(clicks))
         if clicks == -1000:
                 window.title("systemd")
@@ -75,11 +75,11 @@ window.geometry("380x380")
 
 label = Label(window,
         text= str(n),
-        font = ("Helvetica", 40),
-        background="#455",
+        font = ("Helvetica", 60),
+        background="#100",
         foreground="#900")
 label.pack()
-label.place(y=320, x=0)
+label.place(y=310, x=0)
 
 window.bind('<Button-1>', b1)
 window.bind('<Button-3>', b3)
@@ -95,7 +95,7 @@ timing()
 digital=Label(window,
         text="DigitaL",
         font="times 24 bold",
-        background="#455",
+        background="#100",
         foreground="#590")
 digital.pack()
 
@@ -105,10 +105,10 @@ data = data_file.read()         #чтение содержимого файла
 data_file.close()
 w = tk.Label(window,
 	text=data,
-	background="#455",      #цвет фона текста
-	foreground="#590")      #цвет текста
+	background="#100",      #цвет фона текста
+	foreground="#499")      #цвет текста
 w.pack()
-w.place(y=295, x=263)           #положение текста
+w.place(y=310, x=263)           #положение текста
 
 #кнопки
 btn = Button(window,
@@ -129,6 +129,6 @@ btn.pack()
 btn.place(y=240, x=200)
 
 window.resizable(False, False)  #заморозка разрешения окна
-window["bg"]="gray22"
+window["bg"]="black"
 window.mainloop()
 
