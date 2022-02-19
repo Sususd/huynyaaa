@@ -9,7 +9,7 @@ clicks = 0
 
 n = 0
 
-def b1(event):
+def b1(event):                       #ненужно, но прикольно)))))
         e = tk.Label(window,
                 text="Left Click",
                 foreground="#499",
@@ -27,18 +27,18 @@ def b3(event):
         c.place(y=100, x=315)
         window.after(1000, destroy_widget, c)
 
-def destroy_widget(widget):
+def destroy_widget(widget):            #что бы стереть всплывающий текст
         widget.destroy()
 
-def move(event):
+def move(event):                       #слежка за положенем курсора в окне
         x = event.x
         y = event.y
         s = "|o_0| {}x{}".format(x, y)
         window.title(s)
 
-#скрипты для нажатия кнопок
+#скрипты для кнопок
 def click_button():
-        global clicks
+        global clicks                              #тыркалка в названии окна
         clicks += 1
         window.title("Clicks {}".format(clicks))
         if clicks == 1000:
@@ -46,7 +46,7 @@ def click_button():
         if clicks == -1000:
                 window.title("systemd")
 
-        global n
+        global n                                    #тыркалка
         n += 1
         label['text'] = str(n)
 
@@ -54,8 +54,8 @@ def click_b():
         global clicks
         clicks += 1
         window.title("Clicks {}".format(clicks))
-        if clicks == -1000:
-                window.title("systemd")
+        if clicks == -1000:                         #безсмысленно и безполезно
+                window.title("systemd")             #просто есть
         if clicks == 1000:
                 window.title("openrc")
 
@@ -63,7 +63,7 @@ def click_b():
         n -= 1
         label['text'] = str(n)
 
-def timing():
+def timing():                     #часы
         current_time = time.strftime("%H : %M : %S")
         clock.config(text=current_time)
         clock.after(200,timing)
@@ -73,7 +73,7 @@ window = tk.Tk()
 window.title("window")
 window.geometry("380x380")
 
-label = Label(window,
+label = Label(window,              #конфиг тыркалки
         text= str(n),
         font = ("Helvetica", 60),
         background="#100",
@@ -81,18 +81,18 @@ label = Label(window,
 label.pack()
 label.place(y=310, x=0)
 
-window.bind('<Button-1>', b1)
+window.bind('<Button-1>', b1)      #привязка тыркалки
 window.bind('<Button-3>', b3)
 window.bind('<Motion>', move)
 
-clock=tk.Label(window,
+clock=tk.Label(window,             #конфиг часов
         font=("times",60,"bold"),
         background="#455",
         foreground="#590")
 clock.pack()
 timing()
 
-digital=Label(window,
+digital=Label(window,              #подпись под часами
         text="DigitaL",
         font="times 24 bold",
         background="#100",
@@ -118,7 +118,7 @@ btn = Button(window,
 	height=1,		#высота
 	width=17)
 btn.pack()
-btn.place(y=240, x=32)	#положение кнопки в окне
+btn.place(y=240, x=32)	        #положение кнопки в окне
 btn = Button(window,
 	text="NO",
 	background="#900",
