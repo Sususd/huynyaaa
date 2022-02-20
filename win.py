@@ -79,7 +79,7 @@ label = Label(window,              #конфиг тыркалки
         background="#203",
         foreground="#900")
 label.pack()
-label.place(y=310, x=0)
+label.place(y=300, x=0)
 
 window.bind('<Button-1>', b1)      #привязка тыркалки
 window.bind('<Button-3>', b3)
@@ -99,7 +99,7 @@ digital=Label(window,              #подпись под часами
         background="#203",
         foreground="#590")
 digital.pack()
-digital.place(x=205, y=127)
+digital.place(x=205, y=0)
 
 #подключаем текстовый документ
 data_file = open("wintxt.txt")
